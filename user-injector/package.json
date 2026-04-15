@@ -1,0 +1,11 @@
+{
+  "name": "user-injector",
+  "version": "1.0.0",
+  "description": "User context injector plugin for OpenClaw",
+  "type": "module",
+  "main": "plugin-entry.ts",
+  "license": "MIT",
+  "openclaw": {
+    "extensions": ["./plugin-entry.ts"]
+  }
+}

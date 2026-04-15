@@ -1,0 +1,16 @@
+{
+  "name": "openclaw-plugin-user-injector",
+  "version": "1.0.0",
+  "description": "User injector plugin for OpenClaw",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "markdownlint-cli2": "^0.22.0",
+    "typescript": "^6.0.2",
+    "vitest": "^3.0.0"
+  },
+  "scripts": {
+    "lint": "npx tsc --noEmit && npx markdownlint-cli2 '**/*.md'",
+    "test": "vitest"
+  }
+}

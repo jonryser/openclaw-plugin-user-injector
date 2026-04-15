@@ -1,0 +1,9 @@
+{
+  "id": "user-injector",
+  "name": "User Context Injector",
+  "description": "Injects user-specific memory context for known Slack users on message_received and inbound_claim events.",
+  "configSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

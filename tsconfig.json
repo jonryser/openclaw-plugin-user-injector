@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "strict": false,
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "openclaw/plugin-sdk/plugin-entry": [
+        "./types/openclaw/plugin-sdk/plugin-entry/plugin-entry.d.ts"
+      ]
+    },
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true
+  },
+  "include": ["tests/**/*.ts"]
+}
