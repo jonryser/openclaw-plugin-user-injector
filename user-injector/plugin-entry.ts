@@ -9,6 +9,7 @@
 
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import type { OpenClawPluginApi } from "openclaw/plugin-sdk/plugin-entry";
+import { Type } from "@sinclair/typebox";
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join } from "path";
 
@@ -108,18 +109,16 @@ export default definePluginEntry({
 
   register(api: OpenClawPluginApi) {
     // Register a lightweight tool the agent can call to get user context
+    const GetUserContextParams = Type.Object({
+      senderId: Type.String({ description: "The Slack sender ID to look up." }),
+    });
+
     api.registerTool({
       name: "get_user_context",
       description: "Returns the injected user-specific memory context for a Slack sender ID.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          senderId: { type: "string", description: "The Slack sender ID to look up." },
-        },
-        required: ["senderId"],
-      },
-      async invoke(args: { senderId: string }) {
-        const { senderId } = args;
+      parameters: GetUserContextParams,
+      async execute(_toolCallId, params) {
+        const { senderId } = params;
         const ctxPath = join(USER_CONTEXT_DIR, `${senderId}.json`);
         try {
           const raw = readFileSync(ctxPath, "utf-8");

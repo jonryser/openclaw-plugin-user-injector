@@ -12,5 +12,8 @@
   "scripts": {
     "lint": "npx tsc --noEmit && npx markdownlint-cli2 '**/*.md'",
     "test": "vitest"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.49"
   }
 }
