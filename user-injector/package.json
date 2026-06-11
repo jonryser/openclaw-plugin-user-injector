@@ -5,6 +5,9 @@
   "type": "module",
   "main": "plugin-entry.ts",
   "license": "MIT",
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.0"
+  },
   "openclaw": {
     "extensions": ["./plugin-entry.ts"]
   }
